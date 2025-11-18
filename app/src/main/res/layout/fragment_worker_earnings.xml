@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    tools:context=".ui.worker.earnings.EarningsFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingBottom="100dp">
+
+        <LinearLayout
+            android:id="@+id/containerEarnings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/textEarningsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/worker_earnings_heading"
+                android:textColor="@color/worker_home_text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="Earnings" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHero"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:foregroundGravity="center"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="true"
+                app:strokeColor="@android:color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_worker_hero_online"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:id="@+id/textHeroLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_worker_analytics_badge"
+                        android:paddingStart="12dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="6dp"
+                        android:text="@string/worker_earnings_today_badge"
+                        android:textAllCaps="false"
+                        android:textColor="@color/worker_home_hero_muted"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="Today" />
+
+                    <TextView
+                        android:id="@+id/textTotalEarnings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/worker_home_hero_title"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        tools:text="LKR 52,300" />
+
+                    <TextView
+                        android:id="@+id/textTotalChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/worker_home_hero_subtitle"
+                        android:textSize="15sp"
+                        tools:text="Up 12% vs last week" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonQuickWithdraw"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:text="@string/worker_earnings_quick_withdraw"
+                        android:textAllCaps="false"
+                        android:textColor="@color/worker_home_text_primary"
+                        app:icon="@drawable/ic_cash"
+                        app:iconGravity="textStart"
+                        app:iconPadding="12dp"
+                        app:iconTint="@color/worker_home_text_primary"
+                        app:rippleColor="@color/worker_home_cta_ripple" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/layoutSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/worker_home_metric_background"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/worker_home_metric_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/worker_earnings_summary_today"
+                            android:textColor="@color/worker_home_text_secondary"
+                            android:textSize="13sp"
+                            tools:text="Today" />
+
+                        <TextView
+                            android:id="@+id/textSummaryToday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/worker_home_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 2,450" />
+
+                        <TextView
+                            android:id="@+id/textSummaryTodayJobs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/worker_home_text_muted"
+                            android:textSize="12sp"
+                            tools:text="3 jobs" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="@color/worker_home_metric_background"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/worker_home_metric_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/worker_earnings_summary_week"
+                            android:textColor="@color/worker_home_text_secondary"
+                            android:textSize="13sp"
+                            tools:text="This week" />
+
+                        <TextView
+                            android:id="@+id/textSummaryWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/worker_home_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 12,800" />
+
+                        <TextView
+                            android:id="@+id/textSummaryWeekChange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/worker_home_text_muted"
+                            android:textSize="12sp"
+                            tools:text="▲ 12% vs last week" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/worker_home_metric_background"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/worker_home_metric_stroke"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/worker_earnings_summary_month"
+                            android:textColor="@color/worker_home_text_secondary"
+                            android:textSize="13sp"
+                            tools:text="This month" />
+
+                        <TextView
+                            android:id="@+id/textSummaryMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/worker_home_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 48,500" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/progressMonthTarget"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:progress="0"
+                            app:trackThickness="6dp"
+                            app:indicatorColor="@color/worker_home_cta"
+                            app:trackColor="@color/worker_home_metric_stroke" />
+
+                        <TextView
+                            android:id="@+id/textMonthTarget"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/worker_home_text_muted"
+                            android:textSize="12sp"
+                            tools:text="75% of LKR 65,000 target" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/worker_earnings_weekly_analysis"
+                android:textColor="@color/worker_home_text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Weekly earnings" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWeeklyChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/worker_home_metric_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textWeekTotal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/worker_home_text_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 12,800" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipRange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkedButton="@id/chipRangeWeek"
+                            app:singleSelection="true"
+                            app:selectionRequired="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipRangeWeek"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/worker_earnings_range_week"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipRangeMonth"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/worker_earnings_range_month"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipRangeQuarter"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/worker_earnings_range_quarter"
+                                android:textSize="12sp" />
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textWeekInsight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="13sp"
+                        tools:text="Peak day: Wednesday" />
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chartWeekly"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="4dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/worker_earnings_recent"
+                android:textColor="@color/worker_home_text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Recent payouts" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/worker_home_metric_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/containerRecent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/worker_home_text_secondary"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="Monday" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/worker_home_text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Status" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/itemRecentOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textRecentPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/worker_home_text_primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="Deep cleaning" />
+
+                            <TextView
+                                android:id="@+id/textRecentSecondary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/worker_home_text_muted"
+                                android:textSize="12sp"
+                                tools:text="05 Oct • Invoice #4521" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textRecentAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/worker_home_cta"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 4,200" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/dividerRecent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/worker_home_metric_stroke" />
+
+                    <LinearLayout
+                        android:id="@+id/itemRecentTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textRecentPrimaryTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/worker_home_text_primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="Emergency plumbing" />
+
+                            <TextView
+                                android:id="@+id/textRecentSecondaryTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/worker_home_text_muted"
+                                android:textSize="12sp"
+                                tools:text="03 Oct • Invoice #4514" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textRecentAmountTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/worker_home_cta"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="LKR 3,500" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnWithdraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="@string/worker_earnings_withdraw"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_cash"
+        app:iconTint="@android:color/white"
+        app:rippleColor="@color/worker_home_cta_ripple" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

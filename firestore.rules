@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read and write their own profile
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      
+      // Users can read their own preferences and payment info
+      match /preferences/{document} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+      
+      match /paymentCards/{cardId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Services are readable by everyone, but only workers can write their own services
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if request.auth != null && 
+        request.auth.uid == resource.data.workerId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.workerId;
+    }
+    
+    // Bookings are readable by the user and worker involved
+    match /bookings/{bookingId} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == resource.data.userId || 
+         request.auth.uid == resource.data.workerId);
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Job requests are readable by the worker, writable by workers
+    match /jobRequests/{requestId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.workerId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.workerId;
+    }
+    
+    // Conversations are readable by both participants
+    match /conversations/{conversationId} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == resource.data.userId || 
+         request.auth.uid == resource.data.workerId);
+      allow create: if request.auth != null && 
+        (request.auth.uid == request.resource.data.userId || 
+         request.auth.uid == request.resource.data.workerId);
+      
+      // Messages within conversations
+      match /messages/{messageId} {
+        allow read, write: if request.auth != null && 
+          (request.auth.uid == resource.data.userId || 
+           request.auth.uid == resource.data.workerId);
+        allow create: if request.auth != null && 
+          (request.auth.uid == request.resource.data.senderId);
+      }
+    }
+    
+    // Recommended workers are read-only for everyone
+    match /recommendedWorkers/{workerId} {
+      allow read: if true;
+      allow write: if false; // Admin only
+    }
+  }
+}

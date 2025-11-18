@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.user.bookings.ServiceBookingActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:navigationIcon="@drawable/ic_arrow_back"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:title="@string/service_booking_title"
+        app:titleTextColor="@color/worker_home_text_primary" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clipToPadding="false"
+        android:paddingBottom="140dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/imageHero"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/ic_service_manage"
+                tools:tint="@color/primary_color" />
+
+            <LinearLayout
+                android:id="@+id/contentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="24dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeroSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/primary_soft_stroke"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingTop="24dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="24dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imageSummary"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/SkillLink.Shape.Circle"
+                        tools:src="@drawable/ic_service_manage"
+                        tools:tint="@color/primary_color" />
+
+                    <TextView
+                        android:id="@+id/textSummaryName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/worker_home_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp"
+                        app:layout_constraintEnd_toStartOf="@id/imageSummary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Premium Deep Cleaning" />
+
+                    <TextView
+                        android:id="@+id/textSummaryCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/imageSummary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSummaryName"
+                        tools:text="Home Cleaning" />
+
+                    <TextView
+                        android:id="@+id/textSummaryPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/worker_home_schedule_time"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/imageSummary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSummaryCategory"
+                        tools:text="LKR 2,500 per hour" />
+
+                    <TextView
+                        android:id="@+id/textHeroRating"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_home_chip"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="8dp"
+                        android:textColor="@color/primary_color"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/imageSummary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSummaryPrice"
+                        tools:text="4.9★ • 120 jobs" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardServiceSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SmoothCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_booking_overview"
+                        android:textColor="@color/worker_home_text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textHighlights"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        tools:text="• Certified professionals with eco-friendly products\n• 2-hour arrival window with live updates" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupPerks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:chipSpacingHorizontal="12dp"
+                        app:chipSpacingVertical="8dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/service_booking_perk_verified"
+                            app:chipIcon="@drawable/ic_verified"
+                            app:chipIconTint="@color/primary_color"
+                            app:chipStrokeColor="@color/primary_soft_stroke"
+                            app:chipStrokeWidth="1dp"
+                            tools:text="Verified pro" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/service_booking_perk_supplies"
+                            app:chipIcon="@drawable/ic_supplies"
+                            app:chipIconTint="@color/primary_color"
+                            app:chipStrokeColor="@color/primary_soft_stroke"
+                            app:chipStrokeWidth="1dp"
+                            tools:text="Supplies included" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/service_booking_perk_support"
+                            app:chipIcon="@drawable/ic_support"
+                            app:chipIconTint="@color/primary_color"
+                            app:chipStrokeColor="@color/primary_soft_stroke"
+                            app:chipStrokeWidth="1dp"
+                            tools:text="24/7 support" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SmoothCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/labelSchedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_booking_schedule_title"
+                        android:textColor="@color/worker_home_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textScheduleSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/service_booking_schedule_subtitle"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        tools:text="Pick a convenient date, time, and location." />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutDate"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/service_booking_date_label"
+                        app:boxBackgroundMode="outline"
+                        app:endIconDrawable="@drawable/ic_calendar"
+                        app:endIconMode="custom"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:inputType="text"
+                            tools:text="12 October 2025" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutTime"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/service_booking_time_label"
+
+                        app:endIconMode="custom"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:inputType="text"
+                            tools:text="9:30 AM" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutLocation"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/service_booking_location_label">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/service_booking_location_hint"
+                            android:inputType="text"
+                            tools:text="15/4 Downtown Avenue, Colombo" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutNotes"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/service_booking_notes_label">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/service_booking_notes_hint"
+                            android:inputType="textMultiLine"
+                            android:maxLines="4"
+                            tools:text="Please focus on kitchen and balcony deep clean." />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="@android:color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SmoothCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/labelPayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_booking_payment_label"
+                        android:textColor="@color/worker_home_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textPaymentSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/service_booking_payment_subtitle"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp"
+                        tools:text="Choose a payment experience that works best for you." />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPaymentCash"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_marginBottom="12dp"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/primary_soft_stroke"
+                        app:strokeWidth="1dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="68dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="18dp">
+
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/bg_payment_icon"
+                                        android:contentDescription="@null"
+                                        android:padding="10dp"
+                                        android:src="@drawable/ic_cash"
+                                         />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/service_booking_payment_cash"
+                                            android:textColor="@color/worker_home_text_primary"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:text="@string/service_booking_payment_cash_desc"
+                                            android:textColor="@color/worker_home_text_secondary"
+                                            android:textSize="13sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imagePaymentCashCheck"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="end|top"
+                                    android:layout_margin="16dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_check_circle"
+
+                                    android:visibility="gone" />
+
+                            </FrameLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPaymentCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_marginBottom="12dp"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/primary_soft_stroke"
+                            app:strokeWidth="1dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="68dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="18dp">
+
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/bg_payment_icon"
+                                        android:contentDescription="@null"
+                                        android:padding="10dp"
+                                        android:src="@drawable/ic_payment"
+                                         />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/service_booking_payment_card"
+                                            android:textColor="@color/worker_home_text_primary"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="6dp"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:id="@+id/textSavedCardLabel"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:text="@string/service_booking_payment_card_desc_empty"
+                                                android:textColor="@color/worker_home_text_secondary"
+                                                android:textSize="13sp"
+                                                tools:text="Visa •••• 4582 · expires 11/26" />
+
+                                            <Button
+                                                android:id="@+id/buttonManageCards"
+                                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingStart="0dp"
+                                                android:paddingEnd="0dp"
+                                                android:text="@string/service_booking_payment_card_manage"
+                                                android:textAllCaps="false"
+                                                android:textColor="@color/primary_color"
+                                                android:textSize="13sp" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imagePaymentCardCheck"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="end|top"
+                                    android:layout_margin="16dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_check_circle"
+                                    android:visibility="gone" />
+
+                            </FrameLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPaymentOnline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?attr/selectableItemBackground"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/primary_soft_stroke"
+                            app:strokeWidth="1dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="68dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="18dp">
+
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:background="@drawable/bg_payment_icon"
+                                        android:contentDescription="@null"
+                                        android:padding="10dp"
+                                        android:src="@drawable/ic_menu_bookings"
+                                        />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/service_booking_payment_online"
+                                            android:textColor="@color/worker_home_text_primary"
+                                            android:textSize="15sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="4dp"
+                                            android:text="@string/service_booking_payment_online_desc"
+                                            android:textColor="@color/worker_home_text_secondary"
+                                            android:textSize="13sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imagePaymentOnlineCheck"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="end|top"
+                                    android:layout_margin="16dp"
+                                    android:contentDescription="@null"
+                                    android:src="@drawable/ic_check_circle"
+
+                                    android:visibility="gone" />
+
+                            </FrameLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="6dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.SmoothCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_booking_review_label"
+                        android:textColor="@color/worker_home_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textReviewSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/service_booking_review_summary"
+                        android:textColor="@color/worker_home_text_secondary"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/service_booking_review_price_label"
+                                android:textColor="@color/worker_home_text_secondary"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/textReviewPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/primary_color"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                tools:text="LKR 2,500" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonCostBreakdown"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/service_booking_breakdown"
+                            android:textAllCaps="false"
+                            android:textSize="13sp"
+                            app:icon="@drawable/ic_breakdown"
+                            app:iconGravity="textStart"
+                            app:iconPadding="12dp"
+                            app:iconTint="@color/primary_color"
+                            app:strokeColor="@color/primary_soft_stroke"
+                            app:strokeWidth="1dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBottomAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:animateLayoutChanges="true"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="18dp"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_booking_bottom_card"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:id="@+id/textBottomLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_booking_bottom_label"
+                        android:textAllCaps="true"
+                        android:textColor="@color/hero_metric_text"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textBottomPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textBottomLabel"
+                        tools:text="LKR 2,500" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonConfirm"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="@android:color/white"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingVertical="14dp"
+                        android:text="@string/service_booking_confirm"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary_color"
+                        android:textSize="16sp"
+                        app:cornerRadius="18dp"
+                        app:icon="@drawable/ic_booking"
+                        app:iconGravity="textStart"
+                        app:iconPadding="12dp"
+                        app:iconTint="@color/primary_color"
+                        app:rippleColor="@color/worker_home_cta_ripple"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textBottomPrice"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color Palette - Modern, Trustworthy, Sri Lankan Touch -->
+    <color name="primary_color">#2196F3</color> <!-- Vibrant Blue - Primary Brand Color -->
+    <color name="secondary_color">#FF6E40</color> <!-- Deep Orange - Energy & Action -->
+    <color name="accent_color">#00ACC1</color> <!-- Cyan - Reliability & Freshness -->
+    <color name="success_color">#00C853</color> <!-- Green - Completion & Success -->
+    <color name="warning_color">#FFD600</color> <!-- Amber - Attention -->
+    <color name="error_color">#D50000</color> <!-- Red - Critical -->
+    <color name="emergency_color">#FF1744</color> <!-- Bright Red - Urgent -->
+    
+    <!-- Backgrounds -->
+    <color name="background_primary">#121212</color> <!-- Rich Black for Dark Mode -->
+    <color name="background_secondary">#1E1E1E</color>
+    <color name="surface_color">#2C2C2C</color>
+    <color name="background_light">#FAFAFA</color> <!-- Light Mode -->
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color> <!-- Dark mode primary text -->
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#757575</color>
+    
+    <!-- Standard colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bottom_navigation_background">#FFFFFFFF</color>
+    <color name="bottom_nav_active_indicator">#142196F3</color>
+    <color name="bottom_nav_ripple">#1A2196F3</color>
+    <color name="bottom_nav_divider">#142196F3</color>
+    <color name="chip_background_green">#E6F5EC</color>
+    <color name="chip_background_blue">#E8F1FF</color>
+    <color name="messages_highlight_start">#4C7CFF</color>
+    <color name="messages_highlight_end">#2E52D4</color>
+    <color name="primary_soft_stroke">#D9E6F9</color>
+    <color name="primary_chip_surface">#EEF4FF</color>
+    <color name="primary_color_translucent">#802196F3</color>
+    <color name="hero_category_text">#D6E4FF</color>
+    <color name="hero_metric_surface">#26FFFFFF</color>
+    <color name="hero_metric_text">#F8FBFF</color>
+
+    <!-- Worker home palette -->
+    <color name="worker_home_offline_bg">#1F3AE0</color>
+    <color name="worker_home_online_bg">#0EA5E9</color>
+    <color name="worker_home_metric_background">#FFFFFFFF</color>
+    <color name="worker_home_metric_stroke">#1A1F3AE0</color>
+    <color name="worker_home_status_chip_online_bg">#2D68F5</color>
+    <color name="worker_home_status_chip_offline_bg">#FFF2E0</color>
+    <color name="worker_home_status_chip_in_progress_bg">#FFEAD5</color>
+    <color name="worker_home_status_chip_upcoming_bg">#DBEAFE</color>
+    <color name="worker_home_status_chip_completed_bg">#D1FAE5</color>
+    <color name="worker_home_text_primary">#1A202C</color>
+    <color name="worker_home_text_secondary">#60759A</color>
+    <color name="worker_home_text_muted">#94A3B8</color>
+    <color name="worker_home_cta">#2563EB</color>
+    <color name="worker_home_cta_ripple">#202563EB</color>
+    <color name="worker_home_accent_warm">#F97316</color>
+    <color name="worker_home_metric_icon_primary">#2563EB</color>
+    <color name="worker_home_metric_icon_secondary">#F97316</color>
+    <color name="worker_home_metric_icon_tertiary">#10B981</color>
+    <color name="worker_home_metric_icon_surface">#E0E7FF</color>
+    <color name="worker_home_button_outline">#33FFFFFF</color>
+    <color name="worker_home_hero_title">#FFFFFFFF</color>
+    <color name="worker_home_hero_subtitle">#E0E7FF</color>
+    <color name="worker_home_hero_muted">#C7D2FE</color>
+    <color name="worker_home_status_text_online">#C7F9E9</color>
+    <color name="worker_home_status_text_offline">#E2E8F0</color>
+    <color name="worker_home_card_border">#E2E8F0</color>
+    <color name="worker_home_link">#2563EB</color>
+    <color name="worker_home_schedule_time">#1F3AE0</color>
+    <color name="worker_home_analytics_axis">#94A3B8</color>
+    <color name="worker_home_analytics_line">#2563EB</color>
+    <color name="worker_home_analytics_fill_start">#332563EB</color>
+    <color name="worker_home_analytics_fill_end">#002563EB</color>
+    <color name="onboarding_background">#F4F7FC</color>
+    <color name="onboarding_step_text">#51607A</color>
+    <color name="onboarding_highlight_primary">#EEF3FF</color>
+    <color name="onboarding_highlight_blue">#E4F1FF</color>
+    <color name="onboarding_highlight_green">#E6F7F1</color>
+    <color name="onboarding_highlight_stroke">#D7E3FB</color>
+    
+    <!-- Additional colors for payment layouts -->
+    <color name="primary_text_color">#1A202C</color>
+    <color name="secondary_text_color">#60759A</color>
+    <color name="divider_color">#E2E8F0</color>
+</resources>

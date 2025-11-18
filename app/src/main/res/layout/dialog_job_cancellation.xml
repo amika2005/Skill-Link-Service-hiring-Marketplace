@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_cancellation_title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/worker_home_text_primary"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_cancellation_message"
+        android:textSize="14sp"
+        android:textColor="@color/worker_home_text_secondary"
+        android:layout_marginBottom="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutReason"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/job_cancellation_reason_hint"
+        app:boxStrokeColor="@color/primary_color"
+        app:hintTextColor="@color/primary_color"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minLines="3"
+            android:gravity="top"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/job_cancellation_reasons_title"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/worker_home_text_primary"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupReasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/radioScheduleConflict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_cancellation_reason_schedule_conflict"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioEmergency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_cancellation_reason_emergency"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioCustomerRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_cancellation_reason_customer_request"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioTechnicalIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_cancellation_reason_technical_issue"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioButton
+            android:id="@+id/radioOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_cancellation_reason_other"
+            android:textSize="14sp" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCancel"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/job_cancellation_button_cancel"
+            android:textColor="@color/worker_home_text_secondary"
+            app:strokeColor="@color/worker_home_text_secondary"
+            app:cornerRadius="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonConfirm"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/job_cancellation_button_confirm"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/worker_home_accent_warm"
+            app:cornerRadius="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

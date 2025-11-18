@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/worker_home_card_border"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_worker_job_icon"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                tools:src="@drawable/ic_plumber" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/worker_home_text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="Emergency plumbing fix" />
+
+                <TextView
+                    android:id="@+id/textMeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/worker_home_text_secondary"
+                    android:textSize="13sp"
+                    tools:text="Within 30 mins • 2.1 km" />
+
+                <TextView
+                    android:id="@+id/textBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/worker_home_cta"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Budget: LKR 4,200 - 5,000" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipStatus"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:checkable="false"
+                    android:textAllCaps="false"
+                    android:textColor="@color/worker_home_cta"
+                    android:textSize="13sp"
+                    app:chipIcon="@drawable/ic_check_circle"
+                    app:chipIconSize="18dp"
+                    app:chipIconTint="@color/worker_home_cta"
+                    app:chipStartPadding="8dp"
+                    app:chipIconEnabled="true"
+                    app:chipBackgroundColor="@color/worker_home_status_chip_upcoming_bg"
+                    app:chipMinHeight="36dp"
+                    tools:text="Active" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDetails"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:gravity="start"
+                android:text="@string/worker_jobs_view_details"
+                android:textColor="@color/worker_home_link"
+                app:icon="@drawable/ic_arrow_right"
+                app:iconGravity="end"
+                app:iconTint="@color/worker_home_link"
+                tools:text="Review" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCancel"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="88dp"
+                android:text="@string/job_cancellation_button_confirm"
+                android:textColor="@color/worker_home_accent_warm"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

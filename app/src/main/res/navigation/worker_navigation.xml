@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/worker_navigation"
+    app:startDestination="@+id/nav_worker_home">
+
+    <fragment
+        android:id="@+id/nav_worker_home"
+        android:name="com.skilllink.ui.worker.home.WorkerHomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_worker_home" />
+
+    <fragment
+        android:id="@+id/nav_worker_jobs"
+        android:name="com.skilllink.ui.worker.jobs.JobsFragment"
+        android:label="@string/menu_jobs"
+        tools:layout="@layout/fragment_worker_jobs" />
+
+    <fragment
+        android:id="@+id/nav_worker_chat"
+        android:name="com.skilllink.ui.worker.chat.WorkerChatFragment"
+        android:label="@string/menu_chat"
+        tools:layout="@layout/fragment_worker_chat" />
+
+    <fragment
+        android:id="@+id/nav_worker_earnings"
+        android:name="com.skilllink.ui.worker.earnings.EarningsFragment"
+        android:label="@string/menu_earnings"
+        tools:layout="@layout/fragment_worker_earnings" />
+
+    <fragment
+        android:id="@+id/nav_worker_account"
+        android:name="com.skilllink.ui.worker.account.WorkerAccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_worker_account" />
+</navigation>

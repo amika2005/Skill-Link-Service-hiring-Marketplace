@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/worker_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginBottom="12dp"
+    android:background="@android:color/transparent"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/worker_image"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_worker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/SkillLink.Shape.Circle"
+            app:strokeColor="@color/primary_color"
+            app:strokeWidth="1dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/worker_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="#1A202C"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toTopOf="@id/worker_image"
+            tools:text="Amal Perera" />
+
+        <TextView
+            android:id="@+id/worker_occupation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#4A5D7C"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toBottomOf="@id/worker_name"
+            tools:text="Master Electrician" />
+
+        <LinearLayout
+            android:id="@+id/rating_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toBottomOf="@id/worker_occupation">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/home_metric_rating_label"
+                android:src="@drawable/ic_star"
+                android:tint="@color/secondary_color" />
+
+            <TextView
+                android:id="@+id/worker_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="#4A5D7C"
+                android:textSize="12sp"
+                tools:text="4.9★" />
+
+            <TextView
+                android:id="@+id/worker_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_home_chip"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="#1F3AE0"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="182 reviews" />
+
+            <TextView
+                android:id="@+id/availability_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_home_chip"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="@color/secondary_color"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="Available today" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/worker_specialties"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#2F3F5B"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toBottomOf="@id/rating_row"
+            tools:text="Panel upgrades • Safety inspections • Emergency repairs" />
+
+        <LinearLayout
+            android:id="@+id/worker_meta_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toBottomOf="@id/worker_specialties">
+
+            <TextView
+                android:id="@+id/worker_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_home_chip"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="#1A202C"
+                android:textSize="11sp"
+                tools:text="LKR 4,800/hr" />
+
+            <TextView
+                android:id="@+id/worker_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_home_chip"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="#1A202C"
+                android:textSize="11sp"
+                tools:text="2.1 km" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/action_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/worker_image"
+            app:layout_constraintTop_toBottomOf="@id/worker_meta_row">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_chat"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetTop="8dp"
+                android:insetBottom="8dp"
+                android:text="@string/home_worker_action_chat"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_chat"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                app:iconTint="@color/primary_color"
+                app:rippleColor="?attr/colorControlHighlight"
+                tools:text="Chat" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_view_profile"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="@string/home_worker_action_view_profile"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_arrow_right"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                app:iconTint="@color/primary_color"
+                tools:text="View Profile" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

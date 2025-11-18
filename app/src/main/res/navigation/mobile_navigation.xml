@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.skilllink.ui.user.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_user_home_new" />
+
+    <fragment
+        android:id="@+id/nav_bookings"
+        android:name="com.skilllink.ui.user.bookings.BookingsFragment"
+        android:label="@string/menu_bookings"
+        tools:layout="@layout/fragment_user_bookings" />
+
+    <fragment
+        android:id="@+id/nav_chat"
+        android:name="com.skilllink.ui.user.chat.ChatFragment"
+        android:label="@string/menu_chat"
+        tools:layout="@layout/fragment_user_chat" />
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.skilllink.ui.user.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_user_account" />
+</navigation>

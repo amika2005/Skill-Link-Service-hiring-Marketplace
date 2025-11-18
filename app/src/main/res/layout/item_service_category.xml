@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/service_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/bg_service_category"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:cardForegroundColor="@android:color/transparent"
+    app:rippleColor="#1A1F3AE0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="11dp">
+
+        <ImageView
+            android:id="@+id/service_image"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="@string/home_section_services"
+            android:src="@drawable/ic_electrician"
+            android:tint="@null" />
+
+        <TextView
+            android:id="@+id/service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="Electrical"
+            android:textColor="#1A202C"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:text="Plumber" />
+
+        <TextView
+            android:id="@+id/workers_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="18 workers"
+            android:textColor="#60759A"
+            android:textSize="9sp"
+            tools:text="18 pros nearby" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

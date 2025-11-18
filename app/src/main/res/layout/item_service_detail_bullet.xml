@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="32dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iconBullet"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_check_circle"
+        android:tint="@color/primary_color" />
+
+    <TextView
+        android:id="@+id/textBullet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:lineSpacingExtra="2dp"
+        android:textColor="@color/worker_home_text_secondary"
+        android:textSize="13sp" />
+
+</LinearLayout>
