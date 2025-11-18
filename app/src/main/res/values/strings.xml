@@ -471,7 +471,7 @@ Total due today: %1$s</string>
     <string name="home_greeting_fallback_name">there</string>
     <string name="home_greeting_tagline">Let&#8217;s match you with the right professional today.</string>
     <string name="home_hero_badge">Most booked this week</string>
-    <string name="google_maps_key">AIzaSyAJvhNcN_jyOPgLZXFB_sc92JLVyq7lO2k</string>
+    <string name="google_maps_key">YOUR_GOOGLE_MAPS_API_KEY_HERE</string>
     <string name="home_section_emergency">Emergency services</string>
     <string name="home_emergency_badge">Urgent support</string>
     <string name="home_emergency_headline">Need help right now?</string>
