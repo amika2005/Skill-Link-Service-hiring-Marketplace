@@ -16,12 +16,17 @@
 
 ## Quick Start
 1. Clone the repository
-2. Add `google-services.json` to `app/` directory
+2. Add your `google-services.json` to `app/` directory
 3. Add Google Maps API key to `strings.xml`
 4. Build: `./gradlew build && ./gradlew installDebug`
 
+## Security Notes
+- This project contains no real API keys or credentials
+- All sensitive data has been removed for public repository safety
+- Use your own Firebase and API keys for development
+
 ## Contact
-- **Amika Fernando** - amikafernando123@gmail.com
-- **GitHub**: [@amika2005](https://github.com/amika2005)
+- **Project Team** - contact@skilllink.dev
+- **GitHub**: [SkillLink Project](https://github.com/amika2005)
 
 **🚀 Connecting Communities, One Service at a Time!**
